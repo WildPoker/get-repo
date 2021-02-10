@@ -31,18 +31,19 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     "& .inputField": {
-      paddingBottom: "70px",
+      paddingBottom: "60px",
       borderBottom: "1px solid #30363d",
       "& .error": {
         marginRight: "40px",
-        marginTop: "20px",
+        marginTop: "10px",
         color: "#f44336",
+        marginBottom: "-34px",
       },
     },
   },
   textField: {
     flexGrow: 1,
-    margin: "25px 10px 0 15px !important",
+    margin: "60px 10px 0 15px !important",
     "& input ": {
       color: textColor,
     },
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    marginTop: "25px !important",
+    marginTop: "60px !important",
     backgroundColor: "transparent !important",
     border: "2px solid #30363d !important",
     color: "#58a6ff !important",
