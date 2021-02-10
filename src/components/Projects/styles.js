@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 const color1 = "#c9d1d9";
 const color2 = "#8b949e";
 const color3 = "#58a6ff";
-const color4 = "#30363d";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,9 +16,46 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "50px",
     display: "inline-block",
   },
+  tfHolder: {
+    display: "flex",
+    marginBottom: "10px",
+  },
+  textField: {
+    flexGrow: 0.5,
+    margin: "auto",
+    "& input ": {
+      color: color1,
+    },
+    "& .MuiFormLabel-root": {
+      color: color1,
+    },
+    "& label.Mui-focused": {
+      color: color1,
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "#30363d",
+      },
+      "&:hover fieldset": {
+        borderColor: "#c7cfb7",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#388BFD",
+        borderWidth: "3px",
+      },
+    },
+  },
+  button: {
+    position: "fixed",
+    top: "20px",
+    left: "20px",
+    backgroundColor: "transparent !important",
+    color: color3,
+  },
   userInfo: {
     color: color1,
     textAlign: "center",
+    marginBottom: "25px",
     "& h3": {
       color: color2,
     },
@@ -45,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #30363d",
     backgroundColor: "transparent",
     borderRadius: "20px",
-    height: "200px",
+    height: "150px",
     color: color1,
     boxShadow: "4px 6px #0f1319",
     "& h3 ": {

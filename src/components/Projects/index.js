@@ -1,13 +1,12 @@
 import React from "react";
-import UserInfo from "./UserInfo";
-import Reposotories from "./Reposotories";
+
+import Repositories from "./Repositories";
 
 const index = () => {
   return (
-    <div>
-      <UserInfo />
-      <Reposotories />
-    </div>
+    <>
+      <Repositories />
+    </>
   );
 };
 

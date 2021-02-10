@@ -1,13 +1,35 @@
 import React from "react";
 import useStyles from "./styles";
-
 import { useAll } from "../../contexts";
+import { Fab } from "@material-ui/core";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import Slide from "@material-ui/core/Slide";
+import { Alert } from "@material-ui/lab";
 
 const UserInfo = () => {
   const classes = useStyles();
-  const { userData } = useAll();
+  const { userData, returnMain, error } = useAll();
+
+  const handleClick = () => {
+    returnMain();
+  };
+
   return (
     <div className={classes.userInfo}>
+      {error ? (
+        <Slide direction="down" in={error} mountOnEnter unmountOnExit>
+          <Alert
+            variant="filled"
+            severity="error"
+            style={{ position: "fixed", top: "10px", right: "10px" }}
+          >
+            README Not Found!
+          </Alert>
+        </Slide>
+      ) : null}
+      <Fab className={classes.button} onClick={handleClick}>
+        <ArrowBackIcon />
+      </Fab>
       <div className={classes.avatarHolder}>
         <a>
           <img

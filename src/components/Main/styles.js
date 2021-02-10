@@ -1,30 +1,48 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const textColor = "#A5B5BB";
+const color1 = "#c9d1d9";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    minHeight: "100vh",
     width: "100vw",
     display: "flex",
+    position: "relative",
+    textAlign: "center",
+    "& h1": {
+      color: color1,
+      fontSize: "32px",
+      margin: "100px 0 25px",
+    },
+    "& a": {
+      color: color1,
+      fontSize: "16px",
+      textShadow: "1px 1px #58a6ff",
+    },
+    "& .logo": {
+      marginTop: "50px",
+      color: "white",
+      paddingBottom: "25px",
+      borderBottom: "1px solid #30363d",
+      "& .MuiSvgIcon-root": {
+        height: "100px",
+        width: "100px",
+      },
+    },
+    "& .inputField": {
+      paddingBottom: "200px",
+      borderBottom: "1px solid #30363d",
+      "& .error": {
+        marginRight: "40px",
+        marginTop: "20px",
+        color: "#f44336",
+      },
+    },
   },
-
-  card: {
-    height: "110px",
-    width: "270px",
-    margin: "auto",
-    borderRadius: "20px !important",
-    backgroundColor: "#161B22 !important",
-  },
-  form: {
-    height: "100%",
-    width: "100%",
-    alignContent: "center",
-  },
-
   textField: {
-    width: "80%",
-    margin: "25px 5px 0 10px !important",
+    flexGrow: 1,
+    margin: "25px 10px 0 15px !important",
     "& input ": {
       color: textColor,
     },
@@ -36,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: "#21262D",
+        borderColor: "#30363d",
       },
       "&:hover fieldset": {
         borderColor: "#c7cfb7",
@@ -48,13 +66,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    width: "10%",
-    color: "#A5B5BB",
-    height: "50%",
-    border: "2px solid #21262D",
-    borderRadius: "5px",
-    marginTop: "25px",
+    marginTop: "25px !important",
     backgroundColor: "transparent !important",
+    border: "2px solid #30363d !important",
+    color: "#58a6ff !important",
+    "&:hover": {
+      border: "2px solid #c7cfb7 !important",
+    },
   },
 }));
 

@@ -1,15 +1,20 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const color1 = "#c9d1d9";
-const color2 = "#8b949e";
 const color3 = "#58a6ff";
-const color4 = "#30363d";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
     maxWidth: "100vw",
     color: color1,
+  },
+  button: {
+    position: "fixed",
+    top: "20px",
+    left: "20px",
+    backgroundColor: "transparent !important",
+    color: color3,
   },
   Typography: {
     position: "relative",
@@ -18,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "50px",
     marginTop: "50px",
     minHeight: "100vh",
+    whiteSpace: "normal",
+    wordBreak: "break-all",
     "& .header": {
       backgroundColor: "#161b22",
       padding: "16px",
@@ -36,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#f0f6fc26",
       padding: ".2em .4em",
       borderRadius: "6px",
+      whiteSpace: "normal",
+      wordBreak: "break-all",
     },
     "& a": {
       textDecoration: "none",

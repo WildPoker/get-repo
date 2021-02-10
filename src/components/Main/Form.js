@@ -3,22 +3,21 @@ import axios from "axios";
 import { useAll } from "../../contexts";
 import { useHistory } from "react-router-dom";
 import useStyles from "./styles";
-import { Card, TextField } from "@material-ui/core";
+import { Card, TextField, Container, Typography, Fab } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import RingLoader from "react-spinners/RingLoader";
 
 const Form = () => {
   const classes = useStyles();
   const history = useHistory();
   const {
-    userData,
     project,
     loading,
     username,
     setUsername,
-    setProject,
-    setLoading,
-    setError,
-    setUserData,
+    error,
+    settingUsername,
   } = useAll();
 
   const handleChange = (e) => {
@@ -26,45 +25,78 @@ const Form = () => {
     setUsername(value);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      setLoading(true);
-      const resultUser = await axios(
-        `https://api.github.com/users/${username}`
-      );
-      const resultProject = await axios(
-        `https://api.github.com/users/${username}/repos`
-      );
-      setUserData(resultUser);
-      setProject(resultProject);
-      setLoading(false);
-      history.push(`/projects/${username}`);
-    } catch {
-      setError("Username not found.");
-    }
+  const handleClick = async () => {
+    settingUsername();
   };
   console.log(project);
 
   return (
-    <div className={classes.root}>
-      <Card className={classes.card}>
-        <form className={classes.form} onSubmit={handleSubmit}>
-          <TextField
-            label="Username"
-            name="username"
-            variant="outlined"
-            value={username}
-            className={classes.textField}
-            onChange={handleChange}
-          />
-          <button disabled={loading} type="submit" className={classes.button}>
-            <ArrowForwardIosIcon />
-          </button>
-        </form>
-      </Card>
-    </div>
+    <>
+      {loading ? (
+        <>
+          <div
+            style={{
+              textAlign: "center",
+              backgroundColor: "#06090f",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              height: "100vh",
+            }}
+          >
+            <RingLoader color={"#58a6ff"} size={100} />
+          </div>
+        </>
+      ) : (
+        <>
+          {" "}
+          <div className={classes.root}>
+            <Container maxWidth="md">
+              <Typography component="div">
+                <h1>
+                  Welcome to{" "}
+                  <a
+                    style={{
+                      fontSize: "inherit",
+                      color: "#58a6ff",
+                    }}
+                  >
+                    Get Repo
+                  </a>
+                </h1>
+                <a>
+                  This website will allow you to search for Github usernames and
+                  be able to see the repositories
+                </a>
+                <p className="logo">
+                  <GitHubIcon />
+                </p>
+                <div className="inputField">
+                  {error ? <p className="error">{error}</p> : null}
+                  <TextField
+                    error={error && true}
+                    label="Username"
+                    name="username"
+                    variant="outlined"
+                    value={username}
+                    className={classes.textField}
+                    onChange={handleChange}
+                  />
+                  <Fab
+                    disabled={loading}
+                    className={classes.button}
+                    onClick={handleClick}
+                  >
+                    <ArrowForwardIosIcon />
+                  </Fab>
+                </div>
+              </Typography>
+            </Container>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
