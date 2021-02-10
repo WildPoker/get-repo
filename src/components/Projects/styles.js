@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    position: "fixed",
+    position: "absolute",
     top: "20px",
     left: "20px",
     backgroundColor: "transparent !important",
