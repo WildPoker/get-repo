@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     color: color1,
   },
   button: {
-    position: "fixed",
+    position: "absolute",
     top: "20px",
     left: "20px",
     backgroundColor: "transparent !important",
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #30363d",
     borderRadius: "6px",
     marginBottom: "50px",
-    marginTop: "50px",
+    marginTop: "100px",
     minHeight: "100vh",
     whiteSpace: "normal",
     wordBreak: "break-all",
