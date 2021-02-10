@@ -20,10 +20,10 @@ export function AllProvider({ children }) {
 
   const settingUsername = async () => {
     try {
-      setLoading(true);
       const resultUser = await axios(
         `https://api.github.com/users/${username}`
       );
+      setLoading(true);
       const resultProject = await axios(
         `https://api.github.com/users/${username}/repos`
       );

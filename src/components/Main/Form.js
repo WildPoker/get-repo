@@ -10,15 +10,7 @@ import RingLoader from "react-spinners/RingLoader";
 
 const Form = () => {
   const classes = useStyles();
-  const history = useHistory();
-  const {
-    project,
-    loading,
-    username,
-    setUsername,
-    error,
-    settingUsername,
-  } = useAll();
+  const { loading, username, setUsername, error, settingUsername } = useAll();
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -28,7 +20,6 @@ const Form = () => {
   const handleClick = async () => {
     settingUsername();
   };
-  console.log(project);
 
   return (
     <>
