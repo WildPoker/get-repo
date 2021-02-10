@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     "& .inputField": {
-      paddingBottom: "200px",
+      paddingBottom: "70px",
       borderBottom: "1px solid #30363d",
       "& .error": {
         marginRight: "40px",
