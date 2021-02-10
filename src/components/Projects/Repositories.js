@@ -9,10 +9,10 @@ import {
   Button,
   Typography,
   Grid,
-  TextField,
 } from "@material-ui/core";
 import RingLoader from "react-spinners/RingLoader";
-
+import LanguageColors from "../../data/LanguageColors";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 function Repositories() {
   const classes = useStyles();
   const {
@@ -80,6 +80,33 @@ function Repositories() {
                           <Typography component="h3">{value.name}</Typography>
                           <div className="repoInfo">
                             <p>
+                              <FiberManualRecordIcon
+                                style={{
+                                  visibility: !value.language && "hidden",
+                                  color:
+                                    value.language === "JavaScript"
+                                      ? LanguageColors.JavaScript.color
+                                      : value.language === "PHP"
+                                      ? LanguageColors.PHP.color
+                                      : value.language === "Python"
+                                      ? LanguageColors.Python.color
+                                      : value.language === "C#"
+                                      ? LanguageColors["C#"].color
+                                      : value.language === "C++"
+                                      ? LanguageColors["C#"].color
+                                      : value.language === "TypeScript"
+                                      ? LanguageColors["TypeScript"].color
+                                      : value.language === "CSS"
+                                      ? LanguageColors["CSS"].color
+                                      : value.language === "HTML"
+                                      ? LanguageColors["HTML"].color
+                                      : value.language === "Vue"
+                                      ? LanguageColors["Vue"].color
+                                      : null,
+                                  marginBottom: "-3px",
+                                  fontSize: 15,
+                                }}
+                              />
                               <a style={{ fontWeight: "bold" }}>
                                 {value.language}
                               </a>{" "}
