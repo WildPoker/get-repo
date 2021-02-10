@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     color: color3,
   },
   Typography: {
+    flexGrow: 1,
     position: "relative",
     border: "1px solid #30363d",
     borderRadius: "6px",
